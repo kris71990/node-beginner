@@ -1,0 +1,19 @@
+{
+  "name": "node-beginner",
+  "version": "1.0.0",
+  "description": "examples from node beginner e-book",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kris71990/node-beginner.git"
+  },
+  "author": "Kris",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kris71990/node-beginner/issues"
+  },
+  "homepage": "https://github.com/kris71990/node-beginner#readme"
+}

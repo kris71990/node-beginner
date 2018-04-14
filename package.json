@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/kris71990/node-beginner/issues"
   },
-  "homepage": "https://github.com/kris71990/node-beginner#readme"
+  "homepage": "https://github.com/kris71990/node-beginner#readme",
+  "dependencies": {
+    "formidable": "^1.2.1"
+  }
 }

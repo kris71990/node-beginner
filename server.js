@@ -27,21 +27,22 @@ const url = require('url');
 // Example 10 - handle request data to be sent to the router when complete
 function start(route, handle) {
   function onRequest(request, response) {
-    let postData = '';
     let pathname = url.parse(request.url).pathname;
     console.log(`Request for ${pathname} received`);
 
-    request.setEncoding('utf8');
+    route(handle, pathname, response, request);
 
-    request.addListener('data', postDataChunk => {
-      postData += postDataChunk;
-      console.log('Received POST data chunk');
-      postDataChunk + '\'.';
-    });
+    // request.setEncoding('utf8');
 
-    request.addListener('end', () => {
-      route(handle, pathname, response, postData);
-    });
+    // request.addListener('data', postDataChunk => {
+    //   postData += postDataChunk;
+    //   console.log('Received POST data chunk');
+    //   postDataChunk + '\'.';
+    // });
+
+    // request.addListener('end', () => {
+    //   route(handle, pathname, response, postData);
+    // });
 
     // response.writeHead(200, {'Content-Type': 'text/plain'});
     // response.write(content);

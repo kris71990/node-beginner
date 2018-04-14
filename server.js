@@ -1,6 +1,7 @@
 'use strict';
 
 const http = require('http');
+const url = require('url');
 
 // Example 1 - server setup
 // http.createServer((request, response) => {
@@ -23,9 +24,13 @@ const http = require('http');
 
 
 // Example 3 - turning our server script in to a module
-function start() {
+function start(route, handle) {
   function onRequest(request, response) {
-    console.log('Request received');
+    let pathname = url.parse(request.url).pathname;
+    console.log(`Request for ${pathname} received`);
+
+    route(handle, pathname);
+
     response.writeHead(200, {'Content-Type': 'text/plain'});
     response.write('Hello World');
     response.end();
